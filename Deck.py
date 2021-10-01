@@ -14,4 +14,4 @@ class Deck:
         return str(self.cards)
 
     def __repr__(self):
-        return f"Deck({str(self.cards)})"
+        return f"Deck(cards={str(self.cards)})"
