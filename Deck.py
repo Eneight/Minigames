@@ -11,7 +11,7 @@ class Deck:
     def deal(self, amount = 1):
         results = []
         for index in range(amount):
-            results.append(self.cards.pop())
+            results.append(self.cards.pop(0))
         return results
                   
     def __len__(self):
