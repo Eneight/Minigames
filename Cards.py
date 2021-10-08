@@ -6,7 +6,7 @@ class Card:
         if self.kind in ["Jack", "Queen", "King"]:
             self.val = 10
         elif self.kind == "Ace":
-            self.val = 1
+            self.val = 11
         else:
             if int(self.kind) in range(1,10):
                 self.val = int(self.kind)
