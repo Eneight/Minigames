@@ -1,9 +1,9 @@
 from Cards import Card
 
 class Deck:
-    def __init__(self, name = "Player", cards = [Card(kind, suite)
+    def __init__(self, cards = [Card(kind, suite)
                     for kind in ["Ace", "1", "2", "3", "4", "5", "6", "7", "8", "9", "Jack", "Queen", "King"]
-                    for suite in ["Spades", "Hearts", "Diamonds", "Clubs"]]):
+                    for suite in ["Spades", "Hearts", "Diamonds", "Clubs"]],  name = "Player"):
         self.cards = cards
         self.name = name
         self.len = len(self.cards)
@@ -13,6 +13,9 @@ class Deck:
         for index in range(amount):
             results.append(self.cards.pop(0))
         return results
+
+    def status(self):
+        return f"{self.name} has {len(self.cards)} cards."
                   
     def __len__(self):
         return len(self.cards)
