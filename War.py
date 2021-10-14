@@ -27,7 +27,6 @@ def setup():
     player2 = Player(input("Enter Name For Player 2: "), int(input("Enter Number of Chips for Player 2: ")), Deck(deck.deal(26)))
 
 
-#Being Implemented
 def play():
     p1_card = player1.deck.deal()[0]
     print(f"{player1.name} drew {p1_card}.")
