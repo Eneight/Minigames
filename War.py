@@ -1,5 +1,5 @@
-from Deck import Deck
-from Player import Player
+from deck import Deck
+from player import Player
 import random
 
 round_cards = []

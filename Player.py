@@ -1,4 +1,4 @@
-from Deck import Deck
+from deck import Deck
 
 class Player():
     def __init__(self, name = "Player", bank = 0, deck = Deck()):
