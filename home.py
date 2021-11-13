@@ -12,3 +12,5 @@ menu.add.text_input('Name :', default='John Doe')
 menu.add.button('Quit', pygame_menu.events.EXIT)
 
 menu.mainloop(surface)
+
+#Work in progress
