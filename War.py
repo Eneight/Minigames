@@ -5,7 +5,14 @@ import random
 round_cards = []
 
 def main():
-    setup()
+    deck = Deck()
+    random.shuffle(deck)
+    global player1 
+    player1 = Player(input("Enter Name For Player 1: "), int(input("Enter Number of Chips for Player 1: ")), Deck(deck.deal(26)))
+    global player2
+    player2 = Player(input("Enter Name For Player 2: "), int(input("Enter Number of Chips for Player 2: ")), Deck(deck.deal(26)))
+    wager_size = input("Enter Wager Size:")
+    pot = player1.bet(wager_size) + player2.bet(wager_size)
     while len(player1.deck) < 52 and len(player2.deck) < 52:
         print(f"{player1.status()}\n{player2.status()}")
         random.shuffle(player1.deck.cards)
@@ -13,19 +20,11 @@ def main():
         play()
     print(f"{player1.status()}\n{player2.status()}")
     if not len(player1.deck) < 52:
-        print(f"{player1.name} wins!")
+        print(f"{player1.name} wins the game and is awarded {pot} chips!")
+        player1.chips += pot
     else:
-        print(f"{player2.name} wins!")
-
-
-def setup():
-    deck = Deck()
-    random.shuffle(deck)
-    global player1 
-    player1 = Player(input("Enter Name For Player 1: "), int(input("Enter Number of Chips for Player 1: ")), Deck(deck.deal(26)))
-    global player2
-    player2 = Player(input("Enter Name For Player 2: "), int(input("Enter Number of Chips for Player 2: ")), Deck(deck.deal(26)))
-
+        print(f"{player2.name} wins the game and is awarded {pot} chips!")
+        player2.chips += pot
 
 def play():
     p1_card = player1.deck.deal()[0]

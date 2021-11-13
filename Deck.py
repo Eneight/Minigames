@@ -1,4 +1,4 @@
-from Cards import Card
+from cards import Card
 
 class Deck:
     def __init__(self, cards = [Card(kind, suite)
